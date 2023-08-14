@@ -15,8 +15,8 @@
                 "wrong" : "Pancasila"
             } , {
                 "question" : "Apakah isi piagam jakarta sama dengan pancasila ?",
-                "correct" : "Ya",
-                "wrong" : "Tidak"
+                "correct" : "Tidak",
+                "wrong" : "Ya"
             } , {
                 "question" : "Siapakah ketua BBUPKI ?",
                 "correct" : "Radjiman Wedyodiningrat",

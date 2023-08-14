@@ -61,7 +61,6 @@ export async function questionMoment () {
             frameAlert.style.display = 'none'
             onQuest = false
     } , 7000)
-    console.log(correctAnswer)
 }
 
 answerButton.forEach(button => {

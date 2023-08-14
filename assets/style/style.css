@@ -67,7 +67,6 @@ li {
     background-image: url('../img/run/step_1-removebg-preview.png');
     width: 200px;
     height: 200px;
-    border: 1px red solid;
     background-size: 100% 100%;
     animation: run 0.5s;
     animation-iteration-count: infinite;
