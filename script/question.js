@@ -12,6 +12,9 @@ export var onQuest = false
 export var extraBuff = 1;
 export var losed = false
 var correctAnswer;
+const datas = await fetch(uri).then(data => data.json())
+        .then(body => body.questionPack)
+        .catch(()=> 'connection error')
 
 export function lose() {
         frameAlert.style.display = 'block';
@@ -49,9 +52,7 @@ export async function questionMoment () {
     questionBox.style.display = 'block'
     frameAlert.style.display = 'block'
     onQuest = true
-    const datasFetch = await fetch(uri).then(data => data.json())
-        .then(body => body.questionPack)
-        .catch(()=> 'connection error')
+    const datasFetch = datas
     const randomQuest = await randomQuestion(datasFetch)
     questionText.innerHTML = randomQuest.question;
     setAnswer(randomQuest);
