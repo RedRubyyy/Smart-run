@@ -11,7 +11,7 @@ export var onQuest = false
 export var extraBuff = 1;
 export var losed = false
 var correctAnswer;
-export const dataAPI = {
+export const datasAPI = {
     questionPack : 
         [
             {
