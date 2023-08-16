@@ -7,15 +7,69 @@ export const answerButton = document.querySelectorAll('.button-answer');
 export const answerA = document.getElementById('answer-1');
 export const answerB = document.getElementById('answer-2');
 const frameAlert = document.getElementById('alert-frame');
-const uri = '../question.json'
 export var onQuest = false
 export var extraBuff = 1;
 export var losed = false
 var correctAnswer;
-const datas = await fetch(uri).then(data => data.json())
-        .then(body => body.questionPack)
-        .catch(()=> 'connection error')
-
+export const dataAPI = {
+    questionPack : 
+        [
+            {
+                question : "Siapakah presiden RI ke-3 ?",
+                correct : "B.J Habibie",
+                wrong : "Megawati"
+            } , {
+                question : "BPUPKI dibentuk pada tahun ?",
+                correct : "29 April 1945",
+                wrong : "10 Mei 1945"
+            } , {
+                question : "Panitia sembilan berhasil merumuskan ?",
+                correct : "Piagam jakarta",
+                wrong : "Pancasila"
+            } , {
+                question : "Apakah isi piagam jakarta sama dengan pancasila ?",
+                correct : "Tidak",
+                wrong : "Ya"
+            } , {
+                question : "Siapakah ketua BBUPKI ?",
+                correct : "Radjiman Wedyodiningrat",
+                wrong : "Ir. Soekarno"
+            } , {
+                question : "17 Agustus diperingati hari ?",
+                correct : "Kemerdekaan indonesia",
+                wrong : "Sumpah pemuda"
+            } , {
+                question : "10 November diperingati hari ?",
+                correct : "Pahlawan",
+                wrong : "Kartini"
+            } , {
+                question : "Siapakah presiden RI pertama ?",
+                correct : "Ir. Soekarno",
+                wrong : "Moch Hatta"
+            } , {
+                question : "Apa isi dari sila pertama pancasila ?",
+                correct : "Ketuhanan yang maha ESA",
+                wrong : "Kemanusiaan yang adil dan beradab"
+            } , {
+                question : "patung pahlawan revolusi di buat untuk mengenang ?",
+                correct : "Bentuk memorial peristiwa pemberontakan G30S PKI",
+                wrong : "Peperangan pada kota bandung"
+            } , {
+                question : "Kota surabaya dikenal dengan sebutan ?",
+                correct : "Kota pahlawan",
+                wrong : "Bandung lautan api"
+            } , {
+                question : "Monument pada kota surabaya adalah ?",
+                correct : "Tugu pahlawan",
+                wrong : "Monas"
+            } , {
+                question : "Bangsa mana yang pernah menjajah indonesia ?",
+                correct : "Portugis",
+                wrong : "Melayu"
+            }
+        ]
+    
+}
 export function lose() {
         frameAlert.style.display = 'block';
         loseBox.style.display = 'block'
@@ -52,8 +106,8 @@ export async function questionMoment () {
     questionBox.style.display = 'block'
     frameAlert.style.display = 'block'
     onQuest = true
-    const datasFetch = datas
-    const randomQuest = await randomQuestion(datasFetch)
+    const datasFetch = datasAPI.questionPack
+    const randomQuest = randomQuestion(datasFetch)
     questionText.innerHTML = randomQuest.question;
     setAnswer(randomQuest);
     questionBox.style.display = 'block';
